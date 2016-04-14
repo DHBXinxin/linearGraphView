@@ -16,6 +16,4 @@
 
 @property (strong, nonatomic) UIColor *lineColor;
 
-@property (strong, nonatomic) id superV;
-
 @end

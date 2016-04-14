@@ -19,7 +19,6 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         _lineView = [[LineView alloc]initWithFrame:self.bounds];
-        _lineView.superV = self;
         [self addSubview:self.lineView];
     }
     return self;
@@ -35,6 +34,7 @@
 - (void)setPotArrays:(NSArray *)potArrays {
     _potArrays = potArrays;
     _lineView.potArrays = potArrays;
+    self.contentSize = CGSizeMake(_lineView.frame.size.width, self.frame.size.height);
 }
 /*
 // Only override drawRect: if you perform custom drawing.

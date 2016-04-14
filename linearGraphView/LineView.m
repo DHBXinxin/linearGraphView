@@ -84,8 +84,6 @@
     rect.size.width = [pointArray.lastObject CGPointValue].x + PotR;
     self.frame = rect;
     self.pointArray = pointArray;
-    LineScrollView *superView = (LineScrollView *)self.superV;
-    superView.contentSize = CGSizeMake(self.frame.size.width, self.frame.size.height);
     
     [self setNeedsLayout];
 }
