@@ -16,4 +16,12 @@
 
 @property (strong, nonatomic) UIColor *lineColor;
 
+@property (assign, nonatomic) CGFloat space;
+
+@property (assign, nonatomic) CGFloat potRadius;
+//竖轴最大值和最小值
+@property (assign, nonatomic) CGFloat maxY;
+
+@property (assign, nonatomic) CGFloat minY;
+
 @end

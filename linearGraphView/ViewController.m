@@ -11,6 +11,8 @@
 
 @interface ViewController ()
 
+@property (strong, nonatomic) LineScrollView *line;
+
 @end
 
 @implementation ViewController
@@ -20,15 +22,15 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    LineScrollView *line = [[LineScrollView alloc]initWithFrame:CGRectMake(0, 100, 320, 200)];
-    line.lineColor = [UIColor yellowColor];
-    line.potColor = [UIColor purpleColor];
+    _line = [[LineScrollView alloc]initWithFrame:CGRectMake(0, 100, 320, 200)];
+    _line.lineColor = [UIColor yellowColor];
+    _line.potColor = [UIColor purpleColor];
     //先设置线性图的属性、再加入他们的数组
-    line.potArrays = @[@0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8];
-    line.backgroundColor = [UIColor redColor];
-    [self.view addSubview:line];
-}
+    _line.potArrays = @[@0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8];
+    _line.backgroundColor = [UIColor redColor];
+    [self.view addSubview:_line];
 
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

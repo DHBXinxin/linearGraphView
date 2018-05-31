@@ -12,6 +12,8 @@
 
 #define ViewHeight 10//有10个维度｜最高为10、最低为0
 
+#define PotSpace    30
+
 @interface LineView ()
 
 @property (strong, nonatomic) NSArray *pointArray;
@@ -30,6 +32,7 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     // Drawing code
+    [super drawRect:rect];
     [self drawPot:self.pointArray];
 }
 - (void)drawPot:(NSArray *)pointArray {
@@ -42,13 +45,25 @@
                 [lineArray removeObjectAtIndex:0];
             }
             if (lineArray.count == 2) {
-                [self drawLine:lineArray withColor:_lineColor];
+                UIColor *color = nil;
+                if (self.lineColor) {
+                    color = self.lineColor;
+                } else {
+                    color = [UIColor whiteColor];
+                }
+                [self drawLine:lineArray withColor:color];
             }
         }
     }
     for (NSInteger i = 0; i < pointArray.count; i++) {
         CGPoint point = [pointArray[i] CGPointValue];
-        [self drawEllipse:point withColor:_potColor withRad:PotR];
+        UIColor *color = nil;
+        if (self.potColor) {
+            color = self.potColor;
+        } else {
+            color = [UIColor whiteColor];
+        }
+        [self drawEllipse:point withColor:color withRad:PotR];
 
     }
 }
@@ -77,7 +92,7 @@
         NSInteger tag = [potArrays[i] integerValue];
         potY = height / (ViewHeight) * (ViewHeight - tag) + PotR;
         CGPoint point = CGPointMake(potX, potY);
-        potX += 20;
+        potX += self.space ? self.space : PotSpace;
         [pointArray addObject:[NSValue valueWithCGPoint:point]];
     }
     CGRect rect = self.frame;
@@ -87,4 +102,5 @@
     
     [self setNeedsLayout];
 }
+
 @end
