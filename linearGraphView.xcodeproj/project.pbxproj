@@ -14,7 +14,7 @@
 		81FAC3251CBF68960074C0DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81FAC3241CBF68960074C0DF /* Assets.xcassets */; };
 		81FAC3281CBF68960074C0DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81FAC3261CBF68960074C0DF /* LaunchScreen.storyboard */; };
 		81FAC3331CBF68AD0074C0DF /* LinearGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FAC3301CBF68AD0074C0DF /* LinearGraphView.m */; };
-		81FAC3341CBF68AD0074C0DF /* LineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FAC3321CBF68AD0074C0DF /* LineView.m */; };
+		81FAC3341CBF68AD0074C0DF /* DrawLinePot.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FAC3321CBF68AD0074C0DF /* DrawLinePot.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +30,8 @@
 		81FAC3291CBF68960074C0DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81FAC32F1CBF68AD0074C0DF /* LinearGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearGraphView.h; sourceTree = "<group>"; };
 		81FAC3301CBF68AD0074C0DF /* LinearGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinearGraphView.m; sourceTree = "<group>"; };
-		81FAC3311CBF68AD0074C0DF /* LineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineView.h; sourceTree = "<group>"; };
-		81FAC3321CBF68AD0074C0DF /* LineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineView.m; sourceTree = "<group>"; };
+		81FAC3311CBF68AD0074C0DF /* DrawLinePot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLinePot.h; sourceTree = "<group>"; };
+		81FAC3321CBF68AD0074C0DF /* DrawLinePot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLinePot.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +70,8 @@
 				81FAC31F1CBF68960074C0DF /* ViewController.m */,
 				81FAC32F1CBF68AD0074C0DF /* LinearGraphView.h */,
 				81FAC3301CBF68AD0074C0DF /* LinearGraphView.m */,
-				81FAC3311CBF68AD0074C0DF /* LineView.h */,
-				81FAC3321CBF68AD0074C0DF /* LineView.m */,
+				81FAC3311CBF68AD0074C0DF /* DrawLinePot.h */,
+				81FAC3321CBF68AD0074C0DF /* DrawLinePot.m */,
 				81FAC3211CBF68960074C0DF /* Main.storyboard */,
 				81FAC3241CBF68960074C0DF /* Assets.xcassets */,
 				81FAC3261CBF68960074C0DF /* LaunchScreen.storyboard */,
@@ -163,7 +163,7 @@
 				81FAC3331CBF68AD0074C0DF /* LinearGraphView.m in Sources */,
 				81FAC31D1CBF68960074C0DF /* AppDelegate.m in Sources */,
 				81FAC31A1CBF68960074C0DF /* main.m in Sources */,
-				81FAC3341CBF68AD0074C0DF /* LineView.m in Sources */,
+				81FAC3341CBF68AD0074C0DF /* DrawLinePot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

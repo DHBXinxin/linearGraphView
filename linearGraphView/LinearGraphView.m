@@ -7,10 +7,10 @@
 //
 
 #import "LinearGraphView.h"
-#import "LineView.h"
+#import "DrawLinePot.h"
 @interface LinearGraphView ()
 
-@property (strong, nonatomic) LineView *lineView;
+@property (strong, nonatomic) DrawLinePot *lineView;
 
 @property (strong, nonatomic) UIView *xView;
 
@@ -38,7 +38,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         
-        _lineView = [[LineView alloc]initWithFrame:self.bounds];
+        _lineView = [[DrawLinePot alloc]initWithFrame:self.bounds];
         [self addSubview:self.lineView];
     }
     return self;

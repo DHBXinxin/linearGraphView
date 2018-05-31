@@ -6,7 +6,7 @@
 //  Copyright © 2016年 IOS. All rights reserved.
 //
 
-#import "LineView.h"
+#import "DrawLinePot.h"
 #import "LinearGraphView.h"
 #define PotR 5//点的半径linearGraphView
 
@@ -14,12 +14,12 @@
 
 #define PotSpace    30
 
-@interface LineView ()
+@interface DrawLinePot ()
 
 @property (strong, nonatomic) NSArray *drawArray;
 
 @end
-@implementation LineView
+@implementation DrawLinePot
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];

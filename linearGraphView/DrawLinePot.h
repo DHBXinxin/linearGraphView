@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface LineView : UIView
+//画线和点
+@interface DrawLinePot : UIView
 
 @property (strong, nonatomic) NSArray *potArrays;
 

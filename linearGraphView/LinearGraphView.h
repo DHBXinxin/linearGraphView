@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+//界面
 @interface LinearGraphView : UIScrollView
 
 @property (strong, nonatomic) NSArray *potArrays;
