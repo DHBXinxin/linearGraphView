@@ -6,9 +6,9 @@
 //  Copyright © 2016年 IOS. All rights reserved.
 //
 
-#import "LineScrollView.h"
+#import "LinearGraphView.h"
 #import "LineView.h"
-@interface LineScrollView ()
+@interface LinearGraphView ()
 
 @property (strong, nonatomic) LineView *lineView;
 
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation LineScrollView
+@implementation LinearGraphView
 - (UIView *)xView {
     if (_xView) {
         return _xView;

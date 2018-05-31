@@ -7,11 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "LineScrollView.h"
+#import "LinearGraphView.h"
 
 @interface ViewController ()
 
-@property (strong, nonatomic) LineScrollView *line;
+@property (strong, nonatomic) LinearGraphView *line;
 
 @end
 
@@ -22,7 +22,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    _line = [[LineScrollView alloc]initWithFrame:CGRectMake(0, 100, 320, 200)];
+    _line = [[LinearGraphView alloc]initWithFrame:CGRectMake(0, 100, 320, 200)];
     _line.lineColor = [UIColor yellowColor];
     _line.potColor = [UIColor purpleColor];
     //先设置线性图的属性、再加入他们的数组

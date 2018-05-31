@@ -7,8 +7,8 @@
 //
 
 #import "LineView.h"
-#import "LineScrollView.h"
-#define PotR 5//点的半径
+#import "LinearGraphView.h"
+#define PotR 5//点的半径linearGraphView
 
 #define ViewHeight 10//有10个维度｜最高为10、最低为0
 
@@ -16,7 +16,7 @@
 
 @interface LineView ()
 
-@property (strong, nonatomic) NSArray *pointArray;
+@property (strong, nonatomic) NSArray *drawArray;
 
 @end
 @implementation LineView
@@ -33,7 +33,7 @@
 - (void)drawRect:(CGRect)rect {
     // Drawing code
     [super drawRect:rect];
-    [self drawPot:self.pointArray];
+    [self drawPot:self.drawArray];
 }
 - (void)drawPot:(NSArray *)pointArray {
     
@@ -98,7 +98,7 @@
     CGRect rect = self.frame;
     rect.size.width = [pointArray.lastObject CGPointValue].x + PotR;
     self.frame = rect;
-    self.pointArray = pointArray;
+    self.drawArray = pointArray;
     
     [self setNeedsLayout];
 }
