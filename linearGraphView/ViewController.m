@@ -23,6 +23,7 @@
     LineScrollView *line = [[LineScrollView alloc]initWithFrame:CGRectMake(0, 100, 320, 200)];
     line.lineColor = [UIColor yellowColor];
     line.potColor = [UIColor purpleColor];
+    //先设置线性图的属性、再加入他们的数组
     line.potArrays = @[@0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8];
     line.backgroundColor = [UIColor redColor];
     [self.view addSubview:line];
