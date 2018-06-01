@@ -16,4 +16,10 @@
 
 @property (strong, nonatomic) UIColor *lineColor;
 
+@property (assign, nonatomic) CGFloat maxY;
+
+@property (assign, nonatomic) CGFloat space;
+
+@property (assign, nonatomic) CGFloat potRadius;
+
 @end

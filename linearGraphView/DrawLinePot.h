@@ -19,9 +19,7 @@
 @property (assign, nonatomic) CGFloat space;
 
 @property (assign, nonatomic) CGFloat potRadius;
-//竖轴最大值和最小值
+//竖轴最大值、默认0为原点
 @property (assign, nonatomic) CGFloat maxY;
-
-@property (assign, nonatomic) CGFloat minY;
 
 @end

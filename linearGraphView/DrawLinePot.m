@@ -13,6 +13,10 @@
 #define ViewHeight 10//有10个维度｜最高为10、最低为0
 
 #define PotSpace    30
+//左右边距
+#define LeftMargin 30
+
+#define RightMargin 30
 
 @interface DrawLinePot ()
 
@@ -57,13 +61,14 @@
     }
     for (NSInteger i = 0; i < pointArray.count; i++) {
         CGPoint point = [pointArray[i] CGPointValue];
+        id value = self.potArrays[i];
         UIColor *color = nil;
         if (self.potColor) {
             color = self.potColor;
         } else {
             color = [UIColor whiteColor];
         }
-        [self drawEllipse:point withColor:color withRad:PotR];
+        [self drawEllipse:point withColor:color withValue:value];
 
     }
 }
@@ -72,31 +77,44 @@
     CGPoint secondPoint = [pointArray[1] CGPointValue];
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetStrokeColorWithColor(context, color.CGColor);
+    CGContextSetLineWidth(context, 0.5);
     CGContextMoveToPoint(context, firstPoint.x, firstPoint.y);
     CGContextAddLineToPoint(context, secondPoint.x,secondPoint.y);
     CGContextStrokePath(context);
 }
-- (void)drawEllipse:(CGPoint)point withColor:(UIColor*)color withRad:(float)rad
+- (void)drawEllipse:(CGPoint)point withColor:(UIColor*)color withValue:(id)value
 {
+    CGFloat r = self.potRadius ? self.potRadius : PotR;
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(ctx, [color CGColor]);
-    CGContextFillEllipseInRect(ctx, CGRectMake(point.x-rad, point.y-rad, 2*rad, 2*rad));
+    CGContextFillEllipseInRect(ctx, CGRectMake(point.x-r, point.y-r, 2*r, 2*r));
+//    CGContextSetStrokeColorWithColor(ctx, color.CGColor);
+//    CGContextStrokeEllipseInRect(ctx, CGRectMake(point.x-r, point.y-r, 2*r, 2*r));
+    NSString *string = [NSString stringWithFormat:@"%@",value];
+    CGRect rect = CGRectMake(point.x - 20, point.y - 20, 40, 20);
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.alignment = NSTextAlignmentCenter;
+    paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
+    [string drawInRect:rect withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14],NSForegroundColorAttributeName:color, NSParagraphStyleAttributeName: paragraphStyle}];
+    
 }
 - (void)setPotArrays:(NSArray *)potArrays {
+    //设置点
     _potArrays = potArrays;
-    CGFloat potX = PotR;
+    CGFloat potX = LeftMargin;
     CGFloat potY;
+   
     NSMutableArray *pointArray = [NSMutableArray array];
     for (NSInteger i = 0; i < potArrays.count; i++) {
         CGFloat height = CGRectGetHeight(self.frame) - PotR * 2;
         NSInteger tag = [potArrays[i] integerValue];
-        potY = height / (ViewHeight) * (ViewHeight - tag) + PotR;
+        potY = height / (self.maxY ? self.maxY : ViewHeight) * ((self.maxY ? self.maxY : ViewHeight) - tag) + PotR;
         CGPoint point = CGPointMake(potX, potY);
         potX += self.space ? self.space : PotSpace;
         [pointArray addObject:[NSValue valueWithCGPoint:point]];
     }
     CGRect rect = self.frame;
-    rect.size.width = [pointArray.lastObject CGPointValue].x + PotR;
+    rect.size.width = [pointArray.lastObject CGPointValue].x + RightMargin;
     self.frame = rect;
     self.drawArray = pointArray;
     

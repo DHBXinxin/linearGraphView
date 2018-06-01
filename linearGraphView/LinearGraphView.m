@@ -56,6 +56,18 @@
     _lineView.potArrays = potArrays;
     self.contentSize = CGSizeMake(_lineView.frame.size.width + 10, self.frame.size.height + 10);
 }
+- (void)setMaxY:(CGFloat)maxY {
+    _maxY = maxY;
+    _lineView.maxY = maxY;
+}
+- (void)setSpace:(CGFloat)space {
+    _space = space;
+    _lineView.space = space;
+}
+- (void)setPotRadius:(CGFloat)potRadius {
+    _potRadius = potRadius;
+    _lineView.potRadius = potRadius;
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

@@ -25,6 +25,9 @@
     _line = [[LinearGraphView alloc]initWithFrame:CGRectMake(0, 100, 320, 200)];
     _line.lineColor = [UIColor yellowColor];
     _line.potColor = [UIColor purpleColor];
+//    _line.maxY = 15.0;
+//    _line.space = 100;
+    _line.potRadius = 2;
     //先设置线性图的属性、再加入他们的数组
     _line.potArrays = @[@0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8, @0, @2, @5, @10, @8, @8];
     _line.backgroundColor = [UIColor redColor];
